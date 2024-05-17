@@ -1,0 +1,31 @@
+p {
+  font-size: 20px;
+}
+
+a {
+  color: black;
+}
+
+header {
+  background-color: rgb(241, 222, 75);
+  height: 60px;
+}
+
+#img_pk {
+  width: 300px;
+}
+
+.quote {
+  background-color: bisque;
+}
+
+footer {
+  margin-top: 10px;
+  background-color: blueviolet;
+  height: 300px;
+  color: white;
+}
+
+footer a {
+  color: white;
+}
