@@ -40,3 +40,72 @@ body {
   color: rgb(39, 102, 174);
   font-weight: 500;
 }
+
+/* Приветствующая секция */
+.hero {
+  background: url("../img/hero-bg.jpeg") 10% 50% / cover no-repeat;
+  padding: 120px 0;
+}
+
+.hero-title {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 49px;
+  text-align: left;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-text {
+  max-width: 436px;
+}
+
+.hero-text span {
+  /* Стилёвый кусочек */
+  color: rgb(1, 162, 203);
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.first-paragraph {
+  margin-bottom: 15px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 320px;
+}
+
+.hero-button-1,
+.hero-button-2 {
+  display: flex;
+  justify-content: center;
+  padding: 18px 30px;
+  border-radius: 100px;
+}
+
+.hero-button-2 img {
+  margin-left: 4px;
+}
+
+.hero-button-1 {
+  background: linear-gradient(180deg, rgb(0, 164, 204), rgb(39, 102, 174) 100%);
+  margin-bottom: 10px;
+}
+.hero-button-2 {
+  background: linear-gradient(
+    129.14deg,
+    rgb(0, 164, 204) 5.913%,
+    rgb(39, 102, 174) 91.534%
+  );
+}
