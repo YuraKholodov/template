@@ -173,3 +173,44 @@ body {
   border-radius: 100px;
   background: linear-gradient(180deg, rgb(0, 164, 204), rgb(39, 102, 174) 100%);
 }
+
+/* Футер */
+
+.footer {
+  border-top: 1px solid rgb(50, 57, 82);
+  padding: 60px 0;
+}
+
+.footer-inner {
+  display: flex;
+}
+
+.footer-desc {
+  max-width: 267px;
+  margin-right: auto;
+}
+
+.footer-desc img {
+  margin-bottom: 15px;
+}
+
+.footer-title {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 27px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footer-item {
+  margin-bottom: 10px;
+}
+
+.footer-column {
+  max-width: 200px;
+  width: 100%;
+}
+
+.footer-column-1 {
+  margin-right: 20px;
+}
