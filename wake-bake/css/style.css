@@ -530,8 +530,9 @@ body {
 .program__top {
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: center;
   margin-bottom: 60px;
+  gap: 15px;
 }
 
 .program__title {
@@ -548,10 +549,12 @@ body {
 
 .program__action {
   max-width: 501px;
+  width: 100%;
   display: grid;
   grid-template-columns: 1.65fr 1fr;
   grid-template-rows: repeat(3, auto);
   gap: 40px;
+  flex-shrink: 0;
 }
 
 .program__discount {
@@ -629,6 +632,8 @@ body {
   padding: 14px 30px;
   border-radius: 100px;
   box-shadow: 0px 4px 20px 0px rgba(206, 195, 185, 0.3);
+  white-space: nowrap;
+
   transition: var(--transition);
 }
 
@@ -651,9 +656,6 @@ body {
 
 /* Accordion==================================================== */
 
-.accordion-list {
-}
-
 .accordion-list__item {
   border: 1px solid var(--accent-color);
   border-radius: var(--border-radius);
@@ -664,25 +666,26 @@ body {
   margin-bottom: 0;
 }
 
-.accordion-list__item--opened {
-}
-
 .accordion-list__control {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  gap: 15px;
 
   background: transparent;
   width: 100%;
   padding: 40px 30px;
+  text-align: left;
 
   color: var(--accent-text);
   font-family: "Gabriola";
   font-size: 42px;
   line-height: 0.9;
+
+  transition: var(--transition);
 }
 
-.accordion-list__control-title {
+.accordion-list__item--opened .accordion-list__control {
+  padding-bottom: 20px;
 }
 
 .accordion-list__control-icon {
@@ -726,9 +729,6 @@ body {
   line-height: 1.6;
   text-transform: uppercase;
   margin-bottom: 20px;
-}
-
-.accordion-content__list {
 }
 
 .accordion-content__item {
@@ -775,9 +775,6 @@ body {
 
 .accordion-list__item--opened .accordion-list__control-icon path {
   fill: var(--general-bg);
-}
-
-.accordion-content__text {
 }
 
 /* ============================================================= */
@@ -911,6 +908,17 @@ body {
   }
 
   /* ---------------------------------------- */
+  .program__top {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 30px;
+  }
+
+  .tab-controls {
+    flex-wrap: wrap;
+  }
+
+  /* ---------------------------------------- */
 
   .footer__inner {
     grid-template-columns: repeat(3, auto);
@@ -933,6 +941,17 @@ body {
 
   .about__img {
     grid-row: auto;
+  }
+
+  /* ---------------------- */
+
+  .accordion-list__control {
+    padding: 25px 30px;
+    font-size: 35px;
+  }
+
+  .accordion-content {
+    gap: 30px;
   }
 }
 
@@ -965,6 +984,17 @@ body {
 
   .burger-icon {
     display: flex;
+  }
+
+  /* ===================================== */
+
+  .program__action {
+    max-width: none;
+    grid-template-columns: minmax(280px, 1fr) 1fr;
+  }
+
+  .program__img {
+    display: none;
   }
 
   /* ------------------------------------ */
@@ -1029,11 +1059,37 @@ body {
   .about__grid {
     grid-template: none;
   }
+
+  /* ================================================== */
+
+  .tab-controls {
+    gap: 10px;
+  }
+
+  .tab-controls__link {
+    padding: 6px 20px;
+  }
+
+  .accordion-content {
+    flex-direction: column;
+  }
+
+  .accordion-content__col:first-child {
+    max-width: none;
+  }
+
+  .accordion-content__text {
+    max-width: none;
+  }
 }
 
 @media (max-width: 600px) {
   .main__about {
     padding: 60px 0 80px;
+  }
+
+  .main__program {
+    padding-bottom: 80px;
   }
 
   .title {
@@ -1068,6 +1124,50 @@ body {
   .about__grid-item {
     padding: 10px 15px;
   }
+
+  /* =========================== */
+
+  .program__title {
+    text-align: center;
+  }
+
+  .program__top {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .program__action {
+    grid-template: repeat(3, auto) auto auto;
+    gap: 15px;
+  }
+
+  .program__discount {
+    grid-column: 1/-1;
+    grid-row: auto;
+    justify-self: center;
+  }
+
+  .tab-controls {
+    justify-content: center;
+  }
+
+  .accordion-list__item {
+    margin-bottom: 10px;
+  }
+
+  .accordion-list__control {
+    padding: 17px 30px;
+    font-size: 28px;
+  }
+
+  .accordion-list__control-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .accordion-list__control-icon svg {
+    width: 10px;
+  }
 }
 
 @media (max-width: 450px) {
@@ -1082,5 +1182,28 @@ body {
 
   .modal__window {
     padding: 0 15px 45px;
+  }
+
+  /* =============== */
+
+  .accordion-list__control {
+    padding: 17px 15px;
+  }
+
+  .accordion-content {
+    padding: 0 15px 30px;
+  }
+
+  .accordion-content__item {
+    margin-bottom: 10px;
+  }
+
+  .program__discount {
+    text-align: left;
+  }
+
+  .program__action {
+    grid-template: none;
+    text-align: center;
   }
 }
