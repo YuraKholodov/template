@@ -31,7 +31,6 @@
     event.preventDefault();
 
     const target = event.target;
-    console.dir(target);
 
     if (
       target.closest(".modal__cancel") ||
@@ -50,21 +49,18 @@
   function toggleTab(event) {
     const tabControl = event.target.closest(".tab-controls__link");
 
-    if (
-      !tabControl ||
-      tabControl.classList.contains("tab-controls__link--active")
-    )
-      return;
-
+    if (!tabControl) return;
     event.preventDefault();
+    if (tabControl.classList.contains("tab-controls__link--active")) return;
 
     const tabContentId = tabControl.getAttribute("href");
     const tabContent = document.querySelector(tabContentId);
     const activeControl = document.querySelector(".tab-controls__link--active");
     const showTabContent = document.querySelector(".tab-content--show");
 
-    activeControl.classList.remove("tab-controls__link--active");
-    showTabContent.classList.remove("tab-content--show");
+    if (activeControl)
+      activeControl.classList.remove("tab-controls__link--active");
+    if (showTabContent) showTabContent.classList.remove("tab-content--show");
 
     tabControl.classList.add("tab-controls__link--active");
     tabContent.classList.add("tab-content--show");
