@@ -107,4 +107,36 @@
       }
     });
   });
+
+  // Слайдер--------------------------------
+
+  const swiper = new Swiper(".gallery__slider", {
+    spaceBetween: 15,
+    slidesPerView: 2,
+
+    pagination: {
+      type: "fraction",
+      el: ".gallery__pagination",
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: ".gallery__next",
+      prevEl: ".gallery__prev",
+    },
+
+    breakpoints: {
+      601: {
+        slidesPerView: 3,
+      },
+
+      801: {
+        spaceBetween: 32,
+      },
+
+      1101: {
+        slidesPerView: 4,
+      },
+    },
+  });
 })();
