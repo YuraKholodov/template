@@ -108,9 +108,9 @@
     });
   });
 
-  // Слайдер--------------------------------
+  // Слайдер галерея--------------------------------
 
-  const swiper = new Swiper(".gallery__slider", {
+  new Swiper(".gallery__slider", {
     spaceBetween: 15,
     slidesPerView: 2,
 
@@ -136,6 +136,46 @@
 
       1101: {
         slidesPerView: 4,
+      },
+    },
+  });
+
+  // Слайдер отзывы--------------
+
+  new Swiper(".testimonials__slider", {
+    spaceBetween: 0,
+    slidesPerView: 1,
+    centeredSlides: true,
+
+    // Navigation arrows
+    navigation: {
+      nextEl: ".testimonials__next",
+      prevEl: ".testimonials__prev",
+    },
+
+    scrollbar: {
+      el: ".swiper-scrollbar",
+      draggable: true,
+      dragSize: 60,
+    },
+
+    breakpoints: {
+      601: {
+        scrollbar: {
+          dragSize: 100,
+        },
+      },
+
+      901: {
+        scrollbar: {
+          dragSize: 132,
+        },
+
+        slidesPerView: 1.5,
+      },
+
+      1201: {
+        slidesPerView: 2.1,
       },
     },
   });

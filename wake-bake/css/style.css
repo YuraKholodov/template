@@ -422,23 +422,6 @@
   fill: var(--general-bg);
 }
 
-.swiper-button-disabled {
-  border: 1.5px solid rgb(225, 217, 225);
-  cursor: default;
-}
-
-.swiper-button-disabled:hover {
-  background: transparent;
-}
-
-.swiper-button-disabled:hover path {
-  fill: rgb(225, 217, 225);
-}
-
-.swiper-button-disabled path {
-  fill: rgb(225, 217, 225);
-}
-
 .gallery__pagination {
   display: flex;
   font-family: "Gabriola";
@@ -460,6 +443,164 @@
 
 .gallery__slide img {
   width: 100%;
+}
+
+/* Отзывы наших учеников======================================== */
+
+.testimonials__inner {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.testimonials__info {
+  max-width: 632px;
+}
+
+.testimonials__title {
+  margin-bottom: 20px;
+}
+
+.testimonials__nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.testimonials__prev,
+.testimonials__next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  border: 1.5px solid var(--accent-color);
+  cursor: pointer;
+  background: transparent;
+
+  transition: var(--transition);
+}
+
+.testimonials__prev:hover,
+.testimonials__next:hover {
+  background: var(--accent-color);
+}
+
+.testimonials__prev path,
+.testimonials__next path {
+  transition: var(--transition);
+}
+
+.testimonials__prev:hover path,
+.testimonials__next:hover path {
+  fill: var(--general-bg);
+}
+
+.swiper-button-disabled {
+  border: 1.5px solid rgb(225, 217, 225);
+  cursor: default;
+}
+
+.swiper-button-disabled:hover {
+  background: transparent;
+}
+
+.swiper-button-disabled:hover path {
+  fill: rgb(225, 217, 225);
+}
+
+.swiper-button-disabled path {
+  fill: rgb(225, 217, 225);
+}
+
+.testimonials__slider {
+  overflow: visible;
+}
+
+.testimonials__wrapper {
+  margin-bottom: 40px;
+}
+
+.testimonials__slide {
+  display: flex;
+  gap: 30px;
+  height: auto;
+
+  border-radius: var(--border-radius);
+  background: var(--accent-bg);
+  padding: 30px 30px 40px;
+  opacity: 0;
+}
+
+.swiper-slide-prev.testimonials__slide,
+.swiper-slide-next.testimonials__slide {
+  opacity: 0.5;
+}
+
+.testimonials__slide.swiper-slide {
+  transform: scale(0.9);
+  transition: var(--transition);
+}
+
+.swiper-slide-active.testimonials__slide {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.testimonials__student {
+  text-align: center;
+  max-width: 165px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.testimonials__student-img {
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
+}
+
+.testimonials__student-img img {
+  width: 100%;
+}
+
+.testimonials__student-name {
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  line-height: 1.6;
+  color: var(--accent-text);
+}
+
+.testimonials__student-inst {
+  color: rgb(206, 170, 208);
+}
+
+.testimonials__quote span {
+  display: block;
+  color: var(--accent-text);
+  font-family: "Gabriola";
+  font-size: 32px;
+  line-height: 0.9;
+}
+
+.testimonials__scrollbar {
+  background: var(--accent-bg);
+}
+
+.testimonials__scrollbar.swiper-scrollbar {
+  position: static;
+  width: 100%;
+  height: 7px;
+  background: var(--accent-bg);
+}
+
+.testimonials__scrollbar .swiper-scrollbar-drag {
+  background: var(--accent-color);
 }
 
 /* ========================================================= */
@@ -666,6 +807,22 @@
   .accordion-content__text {
     max-width: none;
   }
+
+  /* ------------------------------------------------------- */
+
+  .testimonials__inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .testimonials__nav {
+    align-self: self-end;
+  }
+
+  .testimonials__scrollbar.swiper-scrollbar {
+    width: 50%;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 600px) {
@@ -674,7 +831,8 @@
   }
 
   .main__program,
-  .main__gallery {
+  .main__gallery,
+  .main__testimonials {
     padding-bottom: 80px;
   }
 
@@ -774,6 +932,20 @@
   .gallery__pagination {
     justify-content: center;
   }
+
+  /* Отзывы-------------------- */
+
+  .testimonials__nav {
+    align-self: center;
+    width: 60%;
+    justify-content: space-between;
+  }
+
+  .testimonials__slide {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 @media (max-width: 450px) {
@@ -811,5 +983,11 @@
   .program__action {
     grid-template: none;
     text-align: center;
+  }
+
+  /* Отзывы--------------- */
+
+  .testimonials__slide {
+    padding: 30px 10px;
   }
 }

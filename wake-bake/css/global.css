@@ -39,11 +39,9 @@ body {
   padding: 140px 0;
 }
 
-.main__program {
-  padding-bottom: 145px;
-}
-
-.main__gallery {
+.main__program,
+.main__gallery,
+.main__testimonials {
   padding-bottom: 140px;
 }
 
