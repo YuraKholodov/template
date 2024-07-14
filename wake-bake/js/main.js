@@ -78,6 +78,7 @@
       const accordionControl = event.target.closest(".accordion-list__control");
       // Проверка что нажали на кнопку
       if (!accordionControl) return;
+      event.preventDefault()
       // Находим все открытые элементы в текущем листе
       const openedItems = accordionCurrentList.querySelectorAll(
         ".accordion-list__item--opened"
@@ -112,7 +113,7 @@
 
   new Swiper(".gallery__slider", {
     spaceBetween: 15,
-    slidesPerView: 2,
+    slidesPerView: 1.5,
 
     pagination: {
       type: "fraction",
@@ -179,4 +180,10 @@
       },
     },
   });
+
+  // Маска телефона
+
+  const telInputs = document.querySelectorAll('input[type="tel"]');
+  const im = new Inputmask("+7 (999) 999-99-99");
+  im.mask(telInputs);
 })();
