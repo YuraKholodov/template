@@ -393,7 +393,48 @@ body {
   margin: 0 auto;
 }
 
-/* =============================================== */
+/* Team =============================================== */
+
+.team {
+  background-color: var(--dark-bg);
+  color: var(--white-text-color);
+  padding: 50px 0 80px;
+}
+
+.team__content {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 78px 177px;
+  padding-bottom: 0;
+}
+
+.team__item {
+  position: relative;
+}
+
+.team__img {
+}
+
+.team__item-box {
+  
+  text-align: center;
+  width: 165px;
+  padding: 15px 10px 16px;
+  position: absolute;
+  bottom: 3%;
+  right: -30%;
+  background: rgb(123, 97, 82);
+}
+
+.team__item-name {
+  font-size: 12px;
+  font-family: 'Yeseva One', cursive;
+}
+
+.team__item-descr {
+  font-size: 10px;
+}
+
+/* Footer =============================================== */
 
 .footer {
   padding: 40px 0 35px;
