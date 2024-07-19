@@ -77,13 +77,17 @@ body {
   height: 100%;
 }
 
+.section__inner {
+  display: grid;
+  grid-template-columns: 370px minmax(0, 1fr);
+  gap: 0 76px;
+}
+
 .buy-btn {
-  width: 150px;
-  height: 55px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 18px 54px 18px 54px;
+  padding: 18px 54px;
   background: rgb(255, 189, 89);
   font-family: "Comfortaa", cursive;
   font-weight: 600;
@@ -94,8 +98,19 @@ body {
   font-family: "Yeseva One", cursive;
   font-weight: 400;
   font-size: 40px;
-  letter-spacing: 0%;
   margin-bottom: 15px;
+}
+
+.swiper-pagination-bullet {
+  width: 53px;
+  height: 4px;
+  background: rgb(190, 164, 149);
+  border-radius: unset;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: rgb(123, 97, 82);
 }
 
 /* ================================== */
@@ -172,7 +187,7 @@ body {
 .menu--open .menu__btn span:nth-child(4) {
   transform: rotate(-45deg) translateX(1px) translateY(-8px);
 }
-/* =============================================== */
+/* Header =============================================== */
 
 .top {
   padding: 40px 0 150px;
@@ -210,7 +225,9 @@ body {
 .top__img-l {
   width: 100%;
 }
-/* ================================================= */
+
+/* About ================================================= */
+
 .about {
   color: var(--white-text-color);
   background: var(--dark-bg);
@@ -251,12 +268,6 @@ body {
 }
 
 /* =============================================== */
-
-.section__inner {
-  display: grid;
-  grid-template-columns: 370px auto;
-  gap: 0 76px;
-}
 
 .section__content-descr {
   display: grid;
@@ -399,10 +410,12 @@ body {
   background-color: var(--dark-bg);
   color: var(--white-text-color);
   padding: 50px 0 80px;
+  margin-bottom: 150px;
 }
 
 .team__content {
   grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 1fr;
   gap: 78px 177px;
   padding-bottom: 0;
 }
@@ -412,26 +425,147 @@ body {
 }
 
 .team__img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
 }
 
 .team__item-box {
-  
   text-align: center;
   width: 165px;
   padding: 15px 10px 16px;
-  position: absolute;
   bottom: 3%;
-  right: -30%;
+  right: -45%;
   background: rgb(123, 97, 82);
+  position: absolute;
 }
 
 .team__item-name {
   font-size: 12px;
-  font-family: 'Yeseva One', cursive;
+  font-family: "Yeseva One", cursive;
 }
 
 .team__item-descr {
   font-size: 10px;
+}
+
+/* Feedback============================================== */
+
+.feedback__item {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 16px;
+  align-items: center;
+}
+
+.feedback__item-video {
+  position: relative;
+}
+
+.feedback__item-img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.feedback__item-videobtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+}
+
+/* --------------------------- */
+
+.feedback .section__inner {
+  gap: 0 15px;
+}
+
+.feedback__content {
+  padding-bottom: 110px;
+  position: relative;
+  width: 100%;
+}
+
+.feedback__item-sociallink {
+  margin-bottom: 15px;
+  display: block;
+}
+
+.feedback__item-name {
+  margin-bottom: 15px;
+  font-family: Yeseva One;
+  font-size: 16px;
+}
+
+.feedback__item-text {
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 15px;
+}
+
+.feedback__item-btn {
+  margin-left: auto;
+}
+
+.feedback__pagination.swiper-pagination {
+  bottom: 85px;
+  position: absolute;
+}
+
+/* Certificates========================================= */
+
+.certificates .section__inner {
+  gap: 0 15px;
+}
+
+.certificates__content {
+  padding-bottom: 110px;
+  position: relative;
+  width: 100%;
+}
+
+.certificates__slider {
+  overflow: hidden;
+  width: 160%;
+}
+
+.certificates__img {
+  width: 100%;
+}
+
+.certificates__pagination.swiper-pagination {
+  bottom: 85px;
+  text-align: unset;
+  position: absolute;
+}
+
+/* Promo================================================ */
+
+.promo {
+  color: var(--white-text-color);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/decor/promo.jpeg") 50% 50% / cover no-repeat;
+  padding: 140px 0;
+}
+
+.promo__inner {
+  display: flex;
+  align-items: center;
+}
+
+.promo__text {
+  font-family: "Yeseva One";
+  font-size: 40px;
+  padding-left: 56px;
+  max-width: 785px;
+  margin-right: 110px;
+}
+
+.promo__link {
+  color: var(--general-text-color);
+  padding: 14px 25px 12px;
 }
 
 /* Footer =============================================== */
@@ -465,12 +599,28 @@ body {
 /* ================================================= */
 /* ==================================================== */
 /* =================================================== */
+/* ================================================= */
+/* ==================================================== */
+/* =================================================== */
+/* ================================================= */
+/* ==================================================== */
+/* =================================================== */
 
 @media (max-width: 1000px) {
   .container {
     padding-left: 20px;
     padding-right: 20px;
   }
+
+  .section__inner {
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 0 20px;
+  }
+
+  .title {
+    font-size: 3vw;
+  }
+
   /* ------------------------- */
 
   .top {
@@ -502,7 +652,6 @@ body {
   /* ------------------------- */
 
   .section__inner {
-    grid-template-columns: 300px auto;
     gap: 0 27px;
   }
 
@@ -524,6 +673,20 @@ body {
   .steps__item {
     gap: 0 30px;
   }
+
+  /* Team---------------------------------- */
+
+  .team__content {
+    gap: 30px 120px;
+  }
+
+  .team__item-box {
+    width: 160px;
+    padding: 10px;
+    right: -5%;
+  }
+
+  /* ------------------------------------------ */
 }
 
 @media (max-width: 900px) {
@@ -574,6 +737,16 @@ body {
     max-width: 640px;
   }
 
+  .title {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+
+  .section__inner {
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 0 20px;
+  }
+
   .phone::before {
     width: 14px;
     height: 14px;
@@ -613,10 +786,6 @@ body {
     margin-right: 12px;
   }
 
-  .title {
-    font-size: 15px;
-  }
-
   .about__title {
     margin-bottom: 20px;
     line-height: 17px;
@@ -651,19 +820,8 @@ body {
 
   /* ------------------------------- */
 
-  .section__inner {
-    grid-template-columns: 200px auto;
-    gap: 0 35px;
-  }
-
   .products__content {
-    grid-template-columns: repeat(2, 188px);
     gap: 30px;
-  }
-
-  .title {
-    font-size: 15px;
-    margin-bottom: 15px;
   }
 
   .products__item-price,
@@ -696,11 +854,47 @@ body {
   .steps__item::before {
     font-size: 20px;
   }
-}
 
+  /* Team---------------------------------------- */
+
+  .team__content {
+    gap: 30px 81px;
+  }
+
+  .team__item-box {
+    width: 105px;
+    padding: 10px 5px 0;
+    right: -45%;
+  }
+
+  .team__item-name,
+  .team__item-descr {
+    font-size: 8px;
+  }
+
+  /* --------------------------------- */
+
+  .feedback__item-text {
+    font-size: 10px;
+    line-height: 10px;
+    margin-bottom: 15px;
+  }
+
+  .feedback__item-btn {
+    padding: 10px;
+    font-size: 10px;
+  }
+}
 @media (max-width: 640px) {
-  .container {
-    max-width: 640px;
+  .section__inner {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+  }
+
+  .section__descr {
+    width: 300px;
+    text-align: center;
+    margin-bottom: 30px;
   }
 
   .header__menu {
@@ -749,21 +943,28 @@ body {
     left: -4px;
   }
 
-  /* -------------------------------- */
+  /* Team----------------------------------------- */
 
-  .section__inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .team {
+    margin-bottom: 50px;
   }
 
-  .section__descr {
-    width: 300px;
-    text-align: center;
-    margin-bottom: 30px;
+  .team__content {
+    gap: 30px 56px;
   }
 
-  /* ----------------------------------------- */
+  .team__item-box {
+    width: 140px;
+    padding: 10px;
+    right: -21%;
+  }
+
+  .team__item-name,
+  .team__item-descr {
+    font-size: 12px;
+  }
+
+  /* Certificates------------------------------- */
 }
 
 @media (max-width: 480px) {
@@ -839,7 +1040,19 @@ body {
 
   .steps__item {
     gap: 0 15px;
-    font-size: 6px;
+    font-size: 8px;
+  }
+
+  /* Team------------------------------- */
+
+  .team__item-box {
+    right: -21%;
+    bottom: -10%;
+  }
+
+  .team__item-name,
+  .team__item-descr {
+    font-size: 10px;
   }
 
   /* ----------------- */
@@ -940,8 +1153,8 @@ body {
   }
 
   .products__item-text {
-    font-size: 6px;
-    line-height: 7px;
+    font-size: 8px;
+    line-height: 10px;
   }
 
   .products__item-btn {
@@ -957,10 +1170,21 @@ body {
     gap: 30px 0;
   }
 
-  .courses__title,
-  .courses__time,
-  .courses__price {
-    font-size: 12px;
-    padding: 15px;
+  /* Team----------------------------- */
+
+  .section__descr {
+    font-size: 15px;
+    line-height: 15px;
+  }
+
+  .team__content {
+    grid-template-columns: unset;
+  }
+
+  /* Feedback---------------------------- */
+
+  .feedback__item {
+    grid-template-columns: unset;
+    gap: 10px 16px;
   }
 }
