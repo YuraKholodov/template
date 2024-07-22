@@ -6,6 +6,10 @@
   --spark-line-color: rgb(123, 97, 82);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--general-bg);
   height: 100%;
@@ -35,6 +39,7 @@ body {
 }
 
 .section__content-descr {
+  display: grid;
   padding-bottom: 92px;
 }
 
@@ -92,6 +97,7 @@ body {
   font-family: "Comfortaa", cursive;
   font-weight: 600;
   font-size: 14px;
+  white-space: nowrap;
 }
 
 .title {
@@ -133,6 +139,7 @@ body {
 
 .menu__list-link {
   text-transform: uppercase;
+  padding: 10px 0;
 }
 
 .phone {
@@ -267,11 +274,7 @@ body {
   font-size: 11px;
 }
 
-/* =============================================== */
-
-.section__content-descr {
-  display: grid;
-}
+/*Products =============================================== */
 
 .products__content {
   grid-template-columns: repeat(2, 1fr);
@@ -311,7 +314,7 @@ body {
   margin: 0 auto;
 }
 
-/* =============================================== */
+/* Steps =============================================== */
 
 .steps__list {
   grid-template-columns: repeat(2, 1fr);
@@ -359,15 +362,11 @@ body {
   object-position: center;
 }
 
-/* ================================================ */
+/* Courses ================================================ */
 
 .courses__item-img {
   position: relative;
   margin-bottom: 20px;
-}
-
-.products__item-img {
-  width: 100%;
 }
 
 .courses__title,
@@ -541,6 +540,56 @@ body {
   position: absolute;
 }
 
+/* Questions ============================================= */
+
+.accordeon__item {
+  margin-bottom: 10px;
+  box-shadow: 0px 4px 11px 0px rgba(196, 174, 151, 0.2);
+  background: rgb(255, 255, 255);
+  padding: 17px 26px 17px 13px;
+}
+
+.accordeon__item:last-child {
+  margin-bottom: unset;
+}
+
+.accordeon__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 20px;
+  width: 100%;
+  font-family: "Yeseva One";
+  font-size: 16px;
+  background-color: transparent;
+}
+
+.accordeon__arrow {
+  width: 16px;
+  height: 16px;
+  transition: 0.5s;
+}
+
+.accordeon__content {
+  max-height: 0;
+  opacity: 0;
+
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.accordeon__text {
+  padding: 20px 40px 20px 20px;
+}
+
+.accordeon__item--active .accordeon__content {
+  opacity: 1;
+}
+
+.accordeon__item--active .accordeon__arrow {
+  transform: rotate(180deg);
+}
+
 /* Promo================================================ */
 
 .promo {
@@ -568,10 +617,67 @@ body {
   padding: 14px 25px 12px;
 }
 
+/* Contacts ============================================= */
+
+.contacts {
+  padding: 150px 0 50px;
+}
+
+.contacts__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 0 50px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 75px 42px;
+  background-color: white;
+  margin-bottom: 52px;
+  width: 100%;
+  box-shadow: 0px 4px 11px 0px rgba(199, 175, 165, 0.3);
+}
+
+.form__title {
+  margin-bottom: 60px;
+}
+
+.form__input {
+  border-bottom: 1px solid rgb(0, 0, 0);
+  padding: 7px 10px;
+  margin-bottom: 15px;
+  color: var(--general-text-color);
+}
+
+.form__input::placeholder {
+  color: rgb(179, 179, 179);
+  font-family: Comfortaa;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0%;
+}
+
+.form__btn {
+  padding: 17px 34px;
+  align-self: start;
+  margin-top: 35px;
+}
+
+.contacts__img {
+  width: 448px;
+  height: 664px;
+  object-fit: cover;
+  object-position: center;
+}
+
 /* Footer =============================================== */
 
 .footer {
   padding: 40px 0 35px;
+  background-color: white;
 }
 
 .footer__inner {
@@ -687,6 +793,19 @@ body {
   }
 
   /* ------------------------------------------ */
+
+  .contacts__inner {
+    gap: 0 15px;
+  }
+
+  .form {
+    margin-bottom: 15px;
+  }
+
+  .contacts__img {
+    width: 335px;
+    height: 510px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -884,6 +1003,22 @@ body {
     padding: 10px;
     font-size: 10px;
   }
+
+  /* Contacts------------------------------- */
+
+  .contacts__inner {
+    align-items: center;
+  }
+
+  .form {
+    padding: 30px 20px;
+    margin-bottom: unset;
+  }
+
+  .contacts__img {
+    width: 187px;
+    height: 285px;
+  }
 }
 @media (max-width: 640px) {
   .section__inner {
@@ -964,7 +1099,16 @@ body {
     font-size: 12px;
   }
 
-  /* Certificates------------------------------- */
+  /* Promo ------------------------------- */
+
+  .promo__inner {
+    justify-content: space-between;
+    gap: 0 30px;
+  }
+
+  .promo__text {
+    margin-right: 30px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1053,6 +1197,25 @@ body {
   .team__item-name,
   .team__item-descr {
     font-size: 10px;
+  }
+
+  /* Contacts---------------------------- */
+
+  .contacts {
+    padding: 50px 0;
+  }
+
+  .contacts__inner {
+    align-items: center;
+  }
+
+  .form {
+    padding: 30px 20px;
+    margin-bottom: unset;
+  }
+
+  .contacts__img {
+    display: none;
   }
 
   /* ----------------- */

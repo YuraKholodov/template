@@ -29,4 +29,40 @@
       el: ".certificates__pagination",
     },
   });
+
+  // Аккордеон
+
+  const accordeon = document.querySelector(".accordeon");
+  accordeon.addEventListener("click", toggleAccordeon);
+
+  function toggleAccordeon(event) {
+    const target = event.target;
+
+    if (!target.classList.contains("accordeon__title")) return;
+
+    const accordeonItemsList = accordeon.querySelectorAll(".accordeon__item");
+    const accordeonCurItem = target.closest(".accordeon__item");
+    const accordeonCurContent = accordeonCurItem.querySelector(
+      ".accordeon__content"
+    );
+
+    accordeonItemsList.forEach((item) => {
+      if (
+        item != accordeonCurItem &&
+        item.classList.contains("accordeon__item--active")
+      ) {
+        item.classList.remove("accordeon__item--active");
+        item.querySelector(".accordeon__content").style.maxHeight = 0;
+      }
+    });
+
+    accordeonCurItem.classList.toggle("accordeon__item--active");
+
+    if (accordeonCurItem.classList.contains("accordeon__item--active")) {
+      accordeonCurContent.style.maxHeight =
+        accordeonCurContent.scrollHeight + "px";
+    } else {
+      accordeonCurContent.style.maxHeight = 0;
+    }
+  }
 })();
