@@ -1,0 +1,121 @@
+:root {
+  --general-light-text: rgb(253, 253, 253);
+  --general-dark-text: rgb(24, 18, 30);
+  --btn-bg: rgb(26, 62, 62);
+  --btn-border-rad: 4px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5vw;
+}
+
+body {
+  color: var(--general-dark-text);
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.wrapper {
+  min-height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1210px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.btn {
+  background-color: var(--btn-bg);
+  border-radius: var(--btn-border-rad);
+  color: var(--general-light-text);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Header ======================================================= */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: url("../img/decor/header-bg.jpeg") 50% 50% / cover no-repeat;
+  height: 100vh;
+  padding-top: 25px;
+  padding-bottom: 80px;
+}
+
+.header__top-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: var(--general-light-text);
+  font-size: 18px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.header__logo {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 18px;
+  width: 137px;
+  margin-right: 50px;
+}
+
+.header__logo svg {
+  width: 100%;
+}
+
+.header__nav {
+  margin-left: auto;
+  margin-right: 50px;
+}
+
+.header__nav-list {
+  display: flex;
+  gap: 0 24px;
+}
+
+.header__nav-link {
+}
+
+.header__btn {
+  padding: 12px 24px;
+}
+
+/* Header hero-------------------------- */
+
+.hero__title {
+  color: var(--general-light-text);
+  font-family: "NEXT ART", sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+.hero__form {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.header__form-btn {
+  background: var(--general-light-text);
+  padding: 16px 36px;
+  color: var(--general-dark-text);
+  font-size: 16px;
+  font-weight: 700;
+}
