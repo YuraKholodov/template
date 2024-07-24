@@ -56,10 +56,10 @@
             <nav class="nav header__nav">
               <ul class="nav__list header__nav-list">
                 <li class="nav__item header__nav-item">
-                  <a href="#" class="nav__link header__nav-link"> Главная </a>
+                  <a href="#" class="nav__link header__nav-link">Главная</a>
                 </li>
                 <li class="nav__item header__nav-item">
-                  <a href="#" class="nav__link header__nav-link"> Про гида </a>
+                  <a href="#" class="nav__link header__nav-link">Про гида</a>
                 </li>
                 <li class="nav__item header__nav-item">
                   <a href="#" class="nav__link header__nav-link">
@@ -67,17 +67,23 @@
                   </a>
                 </li>
                 <li class="nav__item header__nav-item">
-                  <a href="#" class="nav__link header__nav-link"> Стоимость </a>
+                  <a href="#" class="nav__link header__nav-link">Стоимость</a>
                 </li>
                 <li class="nav__item header__nav-item">
-                  <a href="#" class="nav__link header__nav-link"> Блог </a>
+                  <a href="#" class="nav__link header__nav-link">Блог</a>
                 </li>
                 <li class="nav__item header__nav-item">
-                  <a href="#" class="nav__link header__nav-link"> Контакты </a>
+                  <a href="#" class="nav__link header__nav-link">Контакты</a>
                 </li>
               </ul>
+              <button class="btn header__btn header__btn--mobile">
+                Консультация
+              </button>
             </nav>
             <button class="btn header__btn">Консультация</button>
+            <a class="burger-icon" href="#">
+              <span></span>
+            </a>
           </div>
         </div>
         <!-- Херо секция--------------------------------- -->
@@ -92,7 +98,9 @@
               <div class="select__wrapper">
                 <label class="hero__form-label">
                   <select name="location" class="form__input hero__form-input">
-                    <option value="none" selected disabled>Локация для тура</option>
+                    <option value="none" selected disabled>
+                      Локация для тура
+                    </option>
                     <option value="1">Лаго-Наки</option>
                     <option value="2">Абхазия</option>
                     <option value="3">Архыз</option>
@@ -119,17 +127,33 @@
                   />
                 </div>
                 <span>укажите диапазон</span>
-                
+
+                <!-- Выбор начала похода -->
                 <div class="select__date-input">
-                  <!-- Выбор начала похода -->
+                  <div class="input__date-wrapper">
+                    <label class="hero__form-label">
+                      <p>Дата начала похода:</p>
+                      <input type="date" class="form__input-date" />
+                    </label>
+                    <!-- Выбор окончания похода -->
+                    <label class="hero__form-label">
+                      <p>Дата завершения похода:</p>
+                      <input type="date" class="form__input-date" />
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <!-- Выбор начала похода -->
+              <div class="select__date-input--mobile">
+                <div class="input__date-wrapper">
                   <label class="hero__form-label">
-                    <input type="date">
-                    <p>Дата начала похода</p>
+                    <p>Дата начала похода:</p>
+                    <input type="date" class="form__input-date" />
                   </label>
                   <!-- Выбор окончания похода -->
                   <label class="hero__form-label">
-                    <input type="date">
-                    <p>Дата завершения похода</p>
+                    <p>Дата завершения похода:</p>
+                    <input type="date" class="form__input-date" />
                   </label>
                 </div>
               </div>
@@ -168,6 +192,78 @@
         enim!
       </main>
       <footer class="footer"></footer>
+    </div>
+
+    <!-- Modal window ===================================== -->
+    <div class="modal">
+      <div class="modal__window">
+        <a href="#" class="modal__cancel">
+          <svg
+            width="24.000000"
+            height="24.000000"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <desc>Created with Pixso.</desc>
+            <defs>
+              <clipPath id="clip41_441">
+                <rect
+                  id="cancel"
+                  rx="11.250000"
+                  width="22.500000"
+                  height="22.500000"
+                  transform="translate(0.750000 0.750000)"
+                  fill="white"
+                  fill-opacity="0"
+                />
+              </clipPath>
+            </defs>
+            <rect
+              id="cancel"
+              rx="11.250000"
+              width="22.500000"
+              height="22.500000"
+              transform="translate(0.750000 0.750000)"
+              fill="#FFFFFF"
+              fill-opacity="0"
+            />
+            <g clip-path="url(#clip41_441)">
+              <path
+                id="Vector"
+                d="M6.75 17.24L12 12L17.24 17.24M17.24 6.75L12 12L6.75 6.75"
+                stroke="#E1D9E1"
+                stroke-opacity="1.000000"
+                stroke-width="1.500000"
+                stroke-linejoin="round"
+              />
+            </g>
+            <rect
+              id="cancel"
+              rx="11.250000"
+              width="22.500000"
+              height="22.500000"
+              transform="translate(0.750000 0.750000)"
+              stroke="#E1D9E1"
+              stroke-opacity="1.000000"
+              stroke-width="1.500000"
+            />
+          </svg>
+        </a>
+        <img class="modal__img" src="./img/decor/cupcakes-modal.png" alt="" />
+        <h3 class="modal__title">Удиви своих близких вкусными капкейками</h3>
+        <p class="modal__text">
+          Оставь свой e-mail, и мы вышлем рецепт на почту
+        </p>
+        <form class="modal__form">
+          <label class="modal__form-label field">
+            <input class="field__input" type="email" placeholder="E-mail" />
+            <span>Введите e-mail</span>
+          </label>
+          <button class="button" type="submit">Получить подарок</button>
+        </form>
+      </div>
     </div>
 
     <script src="./js/main.js"></script>
