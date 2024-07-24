@@ -10,10 +10,12 @@
   </head>
   <body>
     <div class="wrapper">
+      <!-- Шапка сайта-------------------------- -->
       <header class="header">
+        <!-- Верхняя часть шапки------------------------- -->
         <div class="header__top">
           <div class="container header__top-inner">
-            <a href="#" class="header__logo">
+            <a href="#" class="logo header__logo">
               <svg
                 width="137.000000"
                 height="28.780273"
@@ -52,43 +54,112 @@
               </svg>
             </a>
             <nav class="nav header__nav">
-              <ul class="header__nav-list">
-                <li class="header__nav-item">
-                  <a href="#" class="header__nav-link"> Главная </a>
+              <ul class="nav__list header__nav-list">
+                <li class="nav__item header__nav-item">
+                  <a href="#" class="nav__link header__nav-link"> Главная </a>
                 </li>
-                <li class="header__nav-item">
-                  <a href="#" class="header__nav-link"> Про гида </a>
+                <li class="nav__item header__nav-item">
+                  <a href="#" class="nav__link header__nav-link"> Про гида </a>
                 </li>
-                <li class="header__nav-item">
-                  <a href="#" class="header__nav-link"> Программа тура </a>
+                <li class="nav__item header__nav-item">
+                  <a href="#" class="nav__link header__nav-link">
+                    Программа тура
+                  </a>
                 </li>
-                <li class="header__nav-item">
-                  <a href="#" class="header__nav-link"> Стоимость </a>
+                <li class="nav__item header__nav-item">
+                  <a href="#" class="nav__link header__nav-link"> Стоимость </a>
                 </li>
-                <li class="header__nav-item">
-                  <a href="#" class="header__nav-link"> Блог </a>
+                <li class="nav__item header__nav-item">
+                  <a href="#" class="nav__link header__nav-link"> Блог </a>
                 </li>
-                <li class="header__nav-item">
-                  <a href="#" class="header__nav-link"> Контакты </a>
+                <li class="nav__item header__nav-item">
+                  <a href="#" class="nav__link header__nav-link"> Контакты </a>
                 </li>
               </ul>
             </nav>
             <button class="btn header__btn">Консультация</button>
           </div>
         </div>
-        <div class="header__hero">
+        <!-- Херо секция--------------------------------- -->
+        <section class="header__hero">
           <div class="container header__hero-inner">
             <h1 class="title hero__title">
               Насладись прогулкой в горах с командой единомышленников
             </h1>
-            <form action="" class="form hero__form">
-              <input type="text">
-              <input type="date" name="" id="">
-              <input type="text">
-              <button class="btn header__form-btn" type="submit">Найти программу</button>
+            <!-- Форма бронирования похода------------- -->
+            <form class="form hero__form">
+              <!-- Поле выбора направления похода------------- -->
+              <div class="select__wrapper">
+                <label class="hero__form-label">
+                  <select name="location" class="form__input hero__form-input">
+                    <option value="none" selected disabled>Локация для тура</option>
+                    <option value="1">Лаго-Наки</option>
+                    <option value="2">Абхазия</option>
+                    <option value="3">Архыз</option>
+                    <option value="4">Кисловодск</option>
+                    <option value="5">Есентуки</option>
+                  </select>
+                  <span>выберите из списка</span>
+                </label>
+                <img
+                  src="./img/icons/arrow.svg"
+                  alt=""
+                  class="select__wrapper-img"
+                />
+              </div>
+              <!-- Выбор даты похода--------------------------- -->
+              <div class="select__wrapper">
+                <!-- Кнопка выбора дат-------- -->
+                <div class="select__date-btn">
+                  <p>Дата похода</p>
+                  <img
+                    src="./img/icons/date.svg"
+                    alt=""
+                    class="select__wrapper-img"
+                  />
+                </div>
+                <span>укажите диапазон</span>
+                
+                <div class="select__date-input">
+                  <!-- Выбор начала похода -->
+                  <label class="hero__form-label">
+                    <input type="date">
+                    <p>Дата начала похода</p>
+                  </label>
+                  <!-- Выбор окончания похода -->
+                  <label class="hero__form-label">
+                    <input type="date">
+                    <p>Дата завершения похода</p>
+                  </label>
+                </div>
+              </div>
+              <!-- Кол-во участников похода------------- -->
+              <div class="select__wrapper">
+                <label class="hero__form-label">
+                  <select
+                    name="participants_count"
+                    class="form__input hero__form-input"
+                  >
+                    <option value="none" selected disabled>Участники</option>
+                    <option value="1">Группа до 4 человек</option>
+                    <option value="2">Группа до 10 человек</option>
+                    <option value="3">Группа до 20 человек</option>
+                    <option value="4">Группа более 20 человек</option>
+                  </select>
+                  <span>минимум 4 человека</span>
+                </label>
+                <img
+                  src="./img/icons/arrow.svg"
+                  alt=""
+                  class="select__wrapper-img"
+                />
+              </div>
+              <button class="btn header__form-btn" type="submit">
+                Найти программу
+              </button>
             </form>
           </div>
-        </div>
+        </section>
       </header>
       <main class="main">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sapiente
@@ -98,5 +169,7 @@
       </main>
       <footer class="footer"></footer>
     </div>
+
+    <script src="./js/main.js"></script>
   </body>
 </html>
