@@ -505,12 +505,12 @@ select {
 
 @media (max-width: 600px) {
   .hero__title {
-    font-size: 28px;
+    font-size: 26px;
     margin-bottom: 20px;
     max-width: unset;
   }
 
-  .hero .hero__form {
+  .hero__form {
     display: none;
   }
 
