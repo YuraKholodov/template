@@ -1,5 +1,6 @@
 (function () {
-  const heroForm = document.querySelector(".hero__form");
+  const body = document.querySelector("body");
+  const heroForm = body.querySelector(".hero__form");
 
   heroForm.addEventListener("click", toggleDate);
 
@@ -37,7 +38,7 @@
 
   // Бургер меню
 
-  const headerTop = document.querySelector(".header__top");
+  const headerTop = body.querySelector(".header__top");
   headerTop.addEventListener("click", toggleBurgerMenu);
 
   function toggleBurgerMenu(event) {
@@ -48,6 +49,32 @@
 
     if (!btnBurger && !navLink && !btnConsult) return;
 
-    headerTop.classList.toggle("header__nav--active");
+    body.classList.toggle("header__nav--active");
+  }
+
+  // Модалка найти программу
+
+  const modal = body.querySelector(".modal");
+  const modalButton = document.querySelector(".header__form-btn-mobile");
+
+  modalButton.addEventListener("click", openModal);
+  modal.addEventListener("click", closeModal);
+
+  function openModal(event) {
+    event.preventDefault();
+    body.classList.toggle("body--opened-modal");
+  }
+
+  function closeModal(event) {
+    event.preventDefault();
+
+    const target = event.target;
+
+    if (
+      target.closest(".modal__cancel") ||
+      target.classList.contains("modal")
+    ) {
+      body.classList.remove("body--opened-modal");
+    }
   }
 })();

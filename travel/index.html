@@ -87,7 +87,7 @@
           </div>
         </div>
         <!-- Херо секция--------------------------------- -->
-        <section class="header__hero">
+        <section class="header__hero hero">
           <div class="container header__hero-inner">
             <h1 class="title hero__title">
               Насладись прогулкой в горах с командой единомышленников
@@ -143,7 +143,6 @@
                   </div>
                 </div>
               </div>
-              <!-- Выбор начала похода -->
               <div class="select__date-input--mobile">
                 <div class="input__date-wrapper">
                   <label class="hero__form-label">
@@ -182,6 +181,9 @@
                 Найти программу
               </button>
             </form>
+            <button class="btn header__form-btn header__form-btn-mobile">
+              Найти программу
+            </button>
           </div>
         </section>
       </header>
@@ -251,17 +253,93 @@
             />
           </svg>
         </a>
-        <img class="modal__img" src="./img/decor/cupcakes-modal.png" alt="" />
-        <h3 class="modal__title">Удиви своих близких вкусными капкейками</h3>
-        <p class="modal__text">
-          Оставь свой e-mail, и мы вышлем рецепт на почту
-        </p>
-        <form class="modal__form">
-          <label class="modal__form-label field">
-            <input class="field__input" type="email" placeholder="E-mail" />
-            <span>Введите e-mail</span>
-          </label>
-          <button class="button" type="submit">Получить подарок</button>
+        <form class="form hero__form">
+          <!-- Поле выбора направления похода------------- -->
+          <div class="select__wrapper">
+            <label class="hero__form-label">
+              <select name="location" class="form__input hero__form-input">
+                <option value="none" selected disabled>
+                  Локация для тура
+                </option>
+                <option value="1">Лаго-Наки</option>
+                <option value="2">Абхазия</option>
+                <option value="3">Архыз</option>
+                <option value="4">Кисловодск</option>
+                <option value="5">Есентуки</option>
+              </select>
+              <span>выберите из списка</span>
+            </label>
+            <img
+              src="./img/icons/arrow.svg"
+              alt=""
+              class="select__wrapper-img"
+            />
+          </div>
+          <!-- Выбор даты похода--------------------------- -->
+          <div class="select__wrapper">
+            <!-- Кнопка выбора дат-------- -->
+            <div class="select__date-btn">
+              <p>Дата похода</p>
+              <img
+                src="./img/icons/date.svg"
+                alt=""
+                class="select__wrapper-img"
+              />
+            </div>
+            <span>укажите диапазон</span>
+
+            <!-- Выбор начала похода -->
+            <div class="select__date-input">
+              <div class="input__date-wrapper">
+                <label class="hero__form-label">
+                  <p>Дата начала похода:</p>
+                  <input type="date" class="form__input-date" />
+                </label>
+                <!-- Выбор окончания похода -->
+                <label class="hero__form-label">
+                  <p>Дата завершения похода:</p>
+                  <input type="date" class="form__input-date" />
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="select__date-input--mobile">
+            <div class="input__date-wrapper">
+              <label class="hero__form-label">
+                <p>Дата начала похода:</p>
+                <input type="date" class="form__input-date" />
+              </label>
+              <!-- Выбор окончания похода -->
+              <label class="hero__form-label">
+                <p>Дата завершения похода:</p>
+                <input type="date" class="form__input-date" />
+              </label>
+            </div>
+          </div>
+          <!-- Кол-во участников похода------------- -->
+          <div class="select__wrapper">
+            <label class="hero__form-label">
+              <select
+                name="participants_count"
+                class="form__input hero__form-input"
+              >
+                <option value="none" selected disabled>Участники</option>
+                <option value="1">Группа до 4 человек</option>
+                <option value="2">Группа до 10 человек</option>
+                <option value="3">Группа до 20 человек</option>
+                <option value="4">Группа более 20 человек</option>
+              </select>
+              <span>минимум 4 человека</span>
+            </label>
+            <img
+              src="./img/icons/arrow.svg"
+              alt=""
+              class="select__wrapper-img"
+            />
+          </div>
+          <button class="btn header__form-btn" type="submit">
+            Найти программу
+          </button>
         </form>
       </div>
     </div>
