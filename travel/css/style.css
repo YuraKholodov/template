@@ -2,8 +2,8 @@
   --general-light-text: rgb(253, 253, 253);
   --general-dark-text: rgb(24, 18, 30);
   --general-dark-bg: rgb(26, 62, 62);
-  --btn-border-rad: 4px;
   --link-hover-color: rgb(242, 190, 34);
+  --btn-border-rad: 4px;
   --transition: 0.5s;
 }
 
@@ -255,9 +255,10 @@ select {
   background-color: rgb(82, 125, 146);
 }
 
-/* Модалка------------------------- */
+/* Модалки------------------------- */
 
-.modal {
+.modal,
+.modal-contacts {
   display: flex;
   position: fixed;
   inset: 0;
@@ -273,11 +274,13 @@ select {
   transition: var(--transition);
 }
 
-.body--opened-modal {
+.body--opened-modal,
+.body--opened-modal-contacts {
   overflow: hidden;
 }
 
-.body--opened-modal .modal {
+.body--opened-modal .modal,
+.body--opened-modal-contacts .modal-contacts {
   opacity: 1;
   visibility: visible;
 }
@@ -301,6 +304,162 @@ select {
 .modal__cancel:hover path,
 .modal__cancel:hover rect {
   stroke: var(--link-hover-color);
+}
+
+/* Contacts form ======================================================= */
+
+.contact__title {
+  color: var(--general-light-text);
+  font-size: 25px;
+}
+
+.contact__text {
+  color: var(--general-light-text);
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 0 24px;
+  padding: 40px;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--general-light-text);
+}
+
+.field {
+  position: relative;
+  display: block;
+}
+
+.field span {
+  position: absolute;
+  top: 12px;
+  left: 28px;
+  font-size: 11px;
+  color: var(--general-light-text);
+
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+
+.field__input {
+  border: 1px solid var(--general-dark-text);
+  border-radius: 50px;
+  padding: 19px 28px;
+  width: 100%;
+  background: transparent;
+  font-size: 16px;
+  transition: var(--transition);
+}
+
+.field__input:hover {
+  border-color: var(--link-hover-color);
+}
+
+.field__input::placeholder {
+  color: var(--general-light-text);
+  transition: var(--transition);
+}
+
+.field__input:hover::placeholder {
+  color: var(--link-hover-color);
+}
+
+.field__input:focus {
+  padding: 26px 42px 12px 28px;
+  color: var(--general-light-text);
+}
+
+.field__input:focus + span {
+  visibility: visible;
+  opacity: 1;
+  color: var(--general-light-text);
+}
+
+.contact__label {
+  margin-bottom: 10px;
+}
+
+.contact__input {
+  border: 1px solid var(--general-dark-text);
+  border-radius: 100px;
+  padding: 19px 28px;
+  width: 100%;
+  background: transparent;
+  font-size: 16px;
+  transition: var(--transition);
+  margin-bottom: 20px;
+  color: var(--general-light-text);
+}
+
+.contact__input:hover {
+  border-color: var(--link-hover-color);
+}
+
+.contact__input::placeholder {
+  color: var(--general-light-text);
+  transition: var(--transition);
+}
+
+.contact__input:hover::placeholder {
+  color: var(--link-hover-color);
+}
+
+.contact__check-label {
+  display: flex;
+  align-items: start;
+  gap: 5px;
+  max-width: 288px;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.contact__check-label a {
+  text-decoration: underline;
+  transition: var(--transition);
+}
+
+.contact__check-label a:hover {
+  color: var(--link-hover-color);
+}
+
+.contact__checkbox {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--general-dark-bg);
+  border-radius: var(--btn-border-rad);
+  transition: var(--transition);
+  flex-shrink: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.contact__checkbox::before {
+  content: "";
+  background: url("../img/icons/check.svg") 50% 50% no-repeat;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+
+.contact__checkbox:hover {
+  border: 2px solid var(--link-hover-color);
+}
+
+.contact__checkbox:checked {
+  background-color: var(--general-light-text);
+  border: 2px solid var(--general-dark-text);
+}
+
+.contact__checkbox:checked::before {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Header ======================================================= */
@@ -513,7 +672,6 @@ select {
   .hero__form {
     display: none;
   }
-
 
   .body--opened-modal .modal .hero__form {
     display: flex;

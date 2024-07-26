@@ -1,7 +1,7 @@
 (function () {
   const body = document.querySelector("body");
   const heroForm = body.querySelector(".hero__form");
-  const modalHeroForm = body.querySelector('.modal .hero__form')
+  const modalHeroForm = body.querySelector(".modal .hero__form");
 
   heroForm.addEventListener("click", toggleDate);
   modalHeroForm.addEventListener("click", toggleDate);
@@ -10,7 +10,7 @@
     const target = event.target;
     const btnDate = target.closest(".select__date-btn");
     if (!btnDate) return;
-    console.log('rl')
+    console.log("rl");
 
     const date = target.closest(".select__wrapper");
     const dateInput = date.querySelector(".select__date-input");
@@ -44,7 +44,8 @@
         dateInputMobile.style.marginBottom = 10 + "px";
       }
       if (modalDateInputMobile) {
-        modalDateInputMobile.style.maxHeight = modalDateInputMobile.scrollHeight + "px";
+        modalDateInputMobile.style.maxHeight =
+          modalDateInputMobile.scrollHeight + "px";
         modalDateInputMobile.style.marginBottom = 10 + "px";
       }
     }
@@ -71,12 +72,30 @@
   const modal = body.querySelector(".modal");
   const modalButton = document.querySelector(".header__form-btn-mobile");
 
+  const modalContacts = body.querySelector(".modal-contacts");
+  const modalContactsButtonList = document.querySelectorAll(".contacts-btn");
+
   modalButton.addEventListener("click", openModal);
   modal.addEventListener("click", closeModal);
 
+  modalContactsButtonList.forEach((value) => {
+    value.addEventListener("click", openModal);
+  });
+  modalContacts.addEventListener("click", closeModal);
+
   function openModal(event) {
     event.preventDefault();
-    body.classList.toggle("body--opened-modal");
+    const target = event.target;
+    console.log(Array.from(modalContactsButtonList));
+    console.log(Array.from(modalContactsButtonList).includes(target));
+
+    if (target == modalButton) {
+      body.classList.toggle("body--opened-modal");
+      body.classList.remove("body--opened-modal-contacts");
+    } else if (Array.from(modalContactsButtonList).includes(target)) {
+      body.classList.toggle("body--opened-modal-contacts");
+      body.classList.remove("body--opened-modal");
+    }
   }
 
   function closeModal(event) {
@@ -86,9 +105,17 @@
 
     if (
       target.closest(".modal__cancel") ||
-      target.classList.contains("modal")
+      target.classList.contains("modal") ||
+      target.classList.contains("modal-contacts")
     ) {
       body.classList.remove("body--opened-modal");
+      body.classList.remove("body--opened-modal-contacts");
     }
   }
+
+  // Маска телефона
+
+  const telInputs = document.querySelectorAll('input[type="tel"]');
+  const im = new Inputmask("+7 (999) 999-99-99");
+  im.mask(telInputs);
 })();
