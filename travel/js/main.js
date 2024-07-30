@@ -67,7 +67,7 @@
     body.classList.toggle("header__nav--active");
   }
 
-  // Модалка найти программу
+  // Модалка найти программу и модалка "оставить контакты"
 
   const modal = body.querySelector(".modal");
   const modalButton = document.querySelector(".header__form-btn-mobile");
@@ -99,8 +99,6 @@
   }
 
   function closeModal(event) {
-    event.preventDefault();
-
     const target = event.target;
 
     if (
