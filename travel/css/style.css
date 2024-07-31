@@ -650,10 +650,18 @@ select {
 
 .explore__video-btn::before {
   position: absolute;
-  content: '';
+  content: "";
   inset: 3px;
-  background-color: brown;
-  z-index: 10;
+  border: 2px solid var(--link-hover-color);
+  border-radius: 50%;
+  visibility: hidden;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.explore__video-btn:hover:before {
+  visibility: visible;
+  opacity: 1;
 }
 
 /* Footer============================================== */
