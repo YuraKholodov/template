@@ -116,4 +116,14 @@
   const telInputs = document.querySelectorAll('input[type="tel"]');
   const im = new Inputmask("+7 (999) 999-99-99");
   im.mask(telInputs);
+
+  // Слайдер popular-dest
+
+  new Swiper(".popular-dest__slider", {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    autoplay: {
+      delay: 5000,
+    },
+  });
 })();
