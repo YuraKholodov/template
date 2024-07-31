@@ -120,10 +120,18 @@
   // Слайдер popular-dest
 
   new Swiper(".popular-dest__slider", {
-    slidesPerView: 3,
-    spaceBetween: 20,
-    autoplay: {
-      delay: 5000,
+    slidesPerView: 1.2,
+    spaceBetween: 40,
+
+    breakpoints: {
+      600: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      900: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
     },
   });
 })();

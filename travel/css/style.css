@@ -792,7 +792,7 @@ select {
 
 .popular-desc__item-top {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
   margin-bottom: 40px;
 }
@@ -975,6 +975,19 @@ select {
     gap: 0 15px;
     padding: 30px;
   }
+  /* Popular-dest --------------------------------*/
+
+  .popular-dest__item-desc-title {
+    font-size: 20px;
+  }
+
+  .popular-dest__item-desc-text {
+    font-size: 14px;
+  }
+
+  .popular-dest__item-price {
+    font-size: 14px;
+  }
 }
 
 /* ================================================= */
@@ -1075,6 +1088,20 @@ select {
   .suggestion__pictures-img:nth-child(2),
   .suggestion__pictures-img:nth-child(3) {
     display: none;
+  }
+
+  /* Popular ============================================ */
+
+  .popular-dest {
+    padding: 50px 0;
+  }
+
+  .popular__btn {
+    margin: 50px 0 0;
+  }
+
+  .title {
+    margin-bottom: 80px;
   }
 
   /* Footer============================================= */
