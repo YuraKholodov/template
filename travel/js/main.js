@@ -138,13 +138,12 @@
   // Слайдер blog__slider
 
   new Swiper(".blog__slider", {
-    slidesPerView: 'auto',
+    slidesPerView: "auto",
     spaceBetween: 20,
 
     breakpoints: {
-      
       900: {
-        slidesPerView: 'auto',
+        slidesPerView: "auto",
       },
       1100: {
         slidesPerView: 2,
@@ -153,6 +152,39 @@
           fill: "row",
           rows: 2,
         },
+      },
+    },
+  });
+
+  // Слайдеры impressions
+
+  new Swiper(".impressions__slider-1", {
+    slidesPerView: 1.2,
+    spaceBetween: 20,
+    breakpoints: {
+      600: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      900: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+    },
+  });
+
+  new Swiper(".impressions__slider-2", {
+    slidesPerView: 1.2,
+    spaceBetween: 20,
+    width: 250,
+    breakpoints: {
+      600: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      900: {
+        slidesPerView: 3,
+        spaceBetween: 20,
       },
     },
   });
