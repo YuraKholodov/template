@@ -134,4 +134,26 @@
       },
     },
   });
+
+  // Слайдер blog__slider
+
+  new Swiper(".blog__slider", {
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+
+    breakpoints: {
+      
+      900: {
+        slidesPerView: 'auto',
+      },
+      1100: {
+        slidesPerView: 2,
+
+        grid: {
+          fill: "row",
+          rows: 2,
+        },
+      },
+    },
+  });
 })();
