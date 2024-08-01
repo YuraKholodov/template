@@ -1511,31 +1511,17 @@ select {
   .impressions__btn {
     margin-bottom: -150px;
   }
-  .mailing {
-  }
-  .mailing__desc {
-  }
 
   .mailing__desc > span {
     font-size: 16px;
-  }
-  .desc {
-  }
-  .title {
   }
 
   .mailing__title {
     font-size: 20px;
   }
 
-  .mailing__body {
-  }
   .mailing__form {
     font-size: 16px;
-  }
-  .mailing__form-input {
-  }
-  .mailing__btn {
   }
 
   /* Footer============================================= */
