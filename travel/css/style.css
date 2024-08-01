@@ -839,7 +839,7 @@ select {
 }
 
 .popular__btn {
-  margin: 50px 0 100px;
+  margin: 50px 0 50px;
 }
 
 /* Blog =============================================== */
@@ -945,7 +945,7 @@ select {
   width: 100%;
 }
 
-/* Blog =============================================== */
+/* Impressions =============================================== */
 
 .impressions__inner {
   display: flex;
@@ -959,6 +959,11 @@ select {
 
 .impressions__gallery {
   margin-bottom: 20px;
+}
+
+.impressions__btn {
+  margin-top: 50px;
+  margin-bottom: -50px;
 }
 
 .impressions__slider-wrapper {
@@ -977,6 +982,76 @@ select {
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.mailing {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 20px;
+  border-radius: 6px;
+  box-shadow: 0px 0px 15px 0px rgba(24, 18, 30, 0.12);
+  background: rgb(253, 253, 253);
+  padding: 40px 100px;
+  transform: translateY(50%);
+}
+
+.mailing__desc {
+  padding: 0;
+  max-width: 380px;
+}
+
+.mailing__desc span {
+  font-size: 18px;
+}
+
+.mailing__title {
+  color: var(--general-dark-text);
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.mailing__body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 536px;
+}
+
+.mailing__form {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 0 16px;
+}
+
+.mailing__form > label {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.mailing__form-input {
+  margin-top: 8px;
+  max-width: 280px;
+  min-width: 200px;
+  width: 100%;
+  padding: 16px;
+  border-radius: var(--btn-border-rad);
+  background: rgb(243, 245, 244);
+
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.mailing__btn {
+  padding: 12px 24px;
+}
+
+.mailing__body > span {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
 }
 
 /* Footer============================================== */
@@ -1245,7 +1320,7 @@ select {
   }
 
   .popular__btn {
-    margin: 50px 0 0;
+    margin: 50px 0 50px;
   }
 
   /* Blog =============================================== */
@@ -1266,11 +1341,79 @@ select {
 
   /* Impressions ======================================= */
 
-  .impressions__inner {
-    padding: 50px 0 50px 15px;
+  .impressions__btn {
+    margin-bottom: -100px;
+    margin-top: 40px;
+  }
+
+  .mailing {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 40px;
+  }
+
+  .mailing__desc {
+    padding: 0;
+    max-width: 380px;
+  }
+
+  .mailing__desc span {
+    font-size: 18px;
+  }
+
+  .mailing__title {
+    color: var(--general-dark-text);
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  .mailing__body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 536px;
+  }
+
+  .mailing__form {
+    flex-direction: column;
+    align-items: start;
+    gap: 16px 16px;
+  }
+
+  .mailing__form > label {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .mailing__form-input {
+    margin-top: 8px;
+    max-width: 280px;
+    width: 100%;
+    padding: 16px;
+    border-radius: var(--btn-border-rad);
+    background: rgb(243, 245, 244);
+
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  .mailing__btn {
+    padding: 12px 24px;
+  }
+
+  .mailing__body > span {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
   }
 
   /* Footer============================================= */
+
+  .footer__top {
+    padding: 240px 0 80px;
+  }
 
   .footer__top-inner {
     grid-template-columns: 1fr 1fr;
@@ -1363,7 +1506,43 @@ select {
     display: none;
   }
 
+  /* Impression ========================================= */
+
+  .impressions__btn {
+    margin-bottom: -150px;
+  }
+  .mailing {
+  }
+  .mailing__desc {
+  }
+
+  .mailing__desc > span {
+    font-size: 16px;
+  }
+  .desc {
+  }
+  .title {
+  }
+
+  .mailing__title {
+    font-size: 20px;
+  }
+
+  .mailing__body {
+  }
+  .mailing__form {
+    font-size: 16px;
+  }
+  .mailing__form-input {
+  }
+  .mailing__btn {
+  }
+
   /* Footer============================================= */
+
+  .footer__top {
+    padding: 280px 0 80px;
+  }
 
   .footer__top-inner {
     grid-template-columns: auto;
